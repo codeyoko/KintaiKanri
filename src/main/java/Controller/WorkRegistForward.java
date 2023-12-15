@@ -26,8 +26,10 @@ public class WorkRegistForward extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * Work_Regist.jsp（勤務時間登録）に転送する
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//forwardメソッドを使用し、指定されたWork_Regist.jspに転送される
 		RequestDispatcher rd = request.getRequestDispatcher("/View/Work_Regist.jsp");
 		rd.forward(request, response);
 	}

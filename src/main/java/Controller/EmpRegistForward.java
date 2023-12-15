@@ -26,8 +26,10 @@ public class EmpRegistForward extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * Emp_Regist.jsp（社員登録）に転送する
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//forwardメソッドを使用し、指定されたEmp_Regist.jspに転送される
 		RequestDispatcher rd = request.getRequestDispatcher("/View/Emp_Regist.jsp");
 		rd.forward(request, response);
 	}

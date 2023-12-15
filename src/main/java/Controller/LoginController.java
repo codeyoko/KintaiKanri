@@ -33,6 +33,7 @@ public class LoginController extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 管理者ログイン処理、ログイン成功の場合はHomePage.jspに転送する
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

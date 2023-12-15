@@ -26,8 +26,10 @@ public class EmpSearchForward extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * Emp_Search.jsp（社会検索）に転送する
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//forwardメソッドを使用し、指定されたEmp_Search.jspに転送される
 		RequestDispatcher rd = request.getRequestDispatcher("/View/Emp_Search.jsp");
 		rd.forward(request, response);
 	}

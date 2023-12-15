@@ -32,6 +32,7 @@ public class InsertProcessController extends HttpServlet {
 	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 社員登録処理、登録成功の場合はEmpRegist_Succecss.jspに転送する
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -47,7 +48,7 @@ public class InsertProcessController extends HttpServlet {
 		String lastday = request.getParameter("last_day");
 		String depatment = request.getParameter("dept_name");
 		
-		//文字列検証
+		//文字列検証用
 		String stringRegex = "^[a-zA-Z\\u4e00-\\u9fa5ァ-ヶー]+$";
 
 		 //退職日以外の項目に入力されるかチェック

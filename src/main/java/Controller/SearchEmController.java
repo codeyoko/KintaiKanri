@@ -32,7 +32,10 @@ public class SearchEmController extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * 社員検索処理
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//日本語を登録できるように設定
@@ -48,9 +51,7 @@ public class SearchEmController extends HttpServlet {
 		//全ての項目に入力されるかチェック
 		if(!optionValue.isEmpty() && !searchKey.isEmpty()) {
 			
-	        //数字、日付、または文字列の検証
-	        String numericRegex = "^[0-9]+$";
-	        String dateRegex = "\\d{4}-\\d{2}-\\d{2}|\\d{4}/\\d{2}/\\d{2}|\\d{4}年\\d{1,2}月\\d{1,2}日";
+	        //文字列の検証用
 	        String stringRegex = "^[a-zA-Zぁ-んァ-ン一-龯々ー]+$";
 	        
 			 //年齢検索処理
@@ -87,7 +88,7 @@ public class SearchEmController extends HttpServlet {
 					 rd.forward(request,response);
 					 
 				 } 			
-		    }
+		     }
 			 
 			 //退職者検索処理
 			 if(optionValue.equals("retiree")) {

@@ -36,7 +36,9 @@ public class SearchWorkController extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 勤務時間検索処理
 	 */
+	 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//日本語を登録できるように設定
@@ -52,9 +54,7 @@ public class SearchWorkController extends HttpServlet {
 		//全ての項目に入力されるかチェック
 		if(!optionValue.isEmpty() && !searchKey.isEmpty()) {
 			
-	        // 数字、日付、または文字列の検証 正規表現
-	        String numericRegex = "^[0-9]+$";
-	        String dateRegex = "\\d{4}-\\d{2}-\\d{2}|\\d{4}/\\d{2}/\\d{2}|\\d{4}年\\d{1,2}月\\d{1,2}日";
+	        //文字列の検証用
 	        String stringRegex = "^[a-zA-Z\\u4e00-\\u9fa5ァ-ヶー]+$";
 			
 			 //部署名検索処理

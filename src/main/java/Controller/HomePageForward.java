@@ -24,9 +24,12 @@ public class HomePageForward extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * HomePage.jsp（管理者ログイン画面）に転送する
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//forwardメソッドを使用し、指定されたHomePage.jspに転送される
 		RequestDispatcher rd = request.getRequestDispatcher("/View/HomePage.jsp");
 		rd.forward(request, response);
 		

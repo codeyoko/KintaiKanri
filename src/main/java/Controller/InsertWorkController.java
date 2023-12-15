@@ -28,6 +28,10 @@ public class InsertWorkController extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 勤務時間登録処理、登録成功の場合はWorkRegist_Success.jspに転送する
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//日本語を登録できるように設定
@@ -72,15 +76,14 @@ public class InsertWorkController extends HttpServlet {
 		
 	}
 	
-	//労働時間計算
+	//始業から終業までの労働時間を計算
 	private String calculateWorkTime(String startHour, String endHour) {
-        // 休憩時間を差し引いた労働時間を計算
+        //休憩時間を差し引いた労働時間を計算
         int workTimeHours = calculateHoursBetween(startHour, endHour) - 1;
         return formatTime(workTimeHours, 0);
     }
-
+	//時間の差を計算（分）
     private int calculateHoursBetween(String startHour, String endHour) {
-        // 時間の差を計算
         int startMinutes = Integer.parseInt(startHour.split(":")[0]) * 60 + Integer.parseInt(startHour.split(":")[1]);
         int endMinutes = Integer.parseInt(endHour.split(":")[0]) * 60 + Integer.parseInt(endHour.split(":")[1]);
         //総労働時間
@@ -88,7 +91,7 @@ public class InsertWorkController extends HttpServlet {
     }
     
     
-    //残業時間計算
+    //始業から終業までの労働時間と残業時間を計算
     private String calculateOverTime(String startHour, String endHour) {
     	
 		String []startHourStr = startHour.split(":");
@@ -131,8 +134,8 @@ public class InsertWorkController extends HttpServlet {
         return formatTime(overTimeHours, overTimeMinutes);
     }
     
+	// hh:mm形式にフォーマットする
     private String formatTime(int hours, int minutes) {
-        // hh:mm形式にフォーマットする
         return String.format("%02d:%02d", hours, minutes);
     }
     

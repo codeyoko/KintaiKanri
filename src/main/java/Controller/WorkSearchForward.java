@@ -26,8 +26,10 @@ public class WorkSearchForward extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * Work_Search.jsp（勤務時間検索）に転送する
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//forwardメソッドを使用し、指定されたWork_Search.jspに転送される
 		RequestDispatcher rd = request.getRequestDispatcher("/View/Work_Search.jsp");
 		rd.forward(request, response);
 	}

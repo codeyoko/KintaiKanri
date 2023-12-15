@@ -26,8 +26,10 @@ public class AdminLoginForward extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * AdminLogin.jsp（管理者ログイン画面）に転送する
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//forwardメソッドを使用し、指定されたAdminLogin.jspに転送される
 		RequestDispatcher rd = request.getRequestDispatcher("/View/AdminLogin.jsp");
 		rd.forward(request, response);
 		
